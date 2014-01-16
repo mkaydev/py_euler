@@ -7,25 +7,47 @@ The library is (unsurprisingly) limited to generic functionality, which I needed
 ---------------------
 Currently implemented:
 
-* concatenate number sequence to new number: concat_numbers(numbers_seq)
-* get sum of digits: get_digit_sum(n)
-* determine if number is a positive integer: is_pos_int(n, error=0.000000001)
-* determine if number is a triangular number: is_tri_num(n)
-* determine if number is a square number: is_squ_num(n)
-* determine if number is a pentagonal number: is_pent_num(n)
-* determine if number is a hexagonal number: is_hex_num(n)
-* determine if number is a heptagonal number: is_hept_num(n)
-* determine if number is a octagonal number: is_oct_num(n)
-* get number of digits necessary to represent a number: get_digit_count(n, base=10)
-* greatest common divisor -> Euclidean algorithm: gcd(a, b)
-* least common multiple: lcm(a, b)
-* n choose r: nCr(n, r)
-* determine if number is a palindrome: is_palin(n)
-* get area of triangle -> Heron's formula: get_triangle_area(a, b, c)
-* determine if number is a prime: is_prime(n)
-* get all primes smaller than number -> sieve of Eratosthenes: get_primes(n):
-* get one prime factor of number -> Fermat factorization method: get_prime_factor(n)
-* get all prime factors of number (result will be a dictionary with value indicating the power of the factor): get_prime_factors(n)
-* get minimum positive (primitive) solution (x, y) to positive pell equation (x * x - D * y * y = 1) -> continued fraction expansion: get_pos_pell_solution(D)
-* finding the minimum path within a graph from a source to any of a list of targets -> Djikstra's algorithm: get_djikstra_min_path(graph, source, targets)
-* classes Graph and GraphNode for use with the minimum path algorithm
+
+- concatenate number sequence to new number: concat_numbers(numbers_seq)
+
+- get sum of digits: get_digit_sum(n)
+
+- determine if number is a positive integer: is_pos_int(n, error=0.000000001)
+
+- determine if number is a triangular number: is_tri_num(n)
+
+- determine if number is a square number: is_squ_num(n)
+
+- determine if number is a pentagonal number: is_pent_num(n)
+
+- determine if number is a hexagonal number: is_hex_num(n)
+
+- determine if number is a heptagonal number: is_hept_num(n)
+
+- determine if number is a octagonal number: is_oct_num(n)
+
+- get number of digits necessary to represent a number: get_digit_count(n, base=10)
+
+- greatest common divisor -> Euclidean algorithm: gcd(a, b)
+
+- least common multiple: lcm(a, b)
+
+- n choose r: nCr(n, r)
+
+- determine if number is a palindrome: is_palin(n)
+
+- get area of triangle -> Heron's formula: get_triangle_area(a, b, c)
+
+- determine if number is a prime: is_prime(n)
+
+- get all primes smaller than number -> sieve of Eratosthenes: get_primes(n):
+
+- get one prime factor of number -> Fermat factorization method: get_prime_factor(n)
+
+- get all prime factors of number (result will be a dictionary with value indicating the power of the factor): get_prime_factors(n)
+
+- get minimum positive (primitive) solution (x, y) to positive pell equation (x * x - D * y * y = 1) -> continued fraction expansion: get_pos_pell_solution(D)
+
+- finding the minimum path within a graph from a source to any of a list of targets -> Djikstra's algorithm: get_djikstra_min_path(graph, source, targets)
+
+- classes Graph and GraphNode for use with the minimum path algorithm
