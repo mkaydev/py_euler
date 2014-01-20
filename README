@@ -40,13 +40,15 @@ Currently implemented:
 
 - determine if number is a prime: is_prime(n)
 
-- get all primes smaller than number -> sieve of Eratosthenes: get_primes(n):
+- get all primes smaller than number -> sieve of Eratosthenes: get_primes_till(n):
 
 - get one prime factor of number -> Fermat factorization method: get_prime_factor(n)
 
 - get all prime factors of number (result will be a dictionary with value indicating the power of the factor): get_prime_factors(n)
 
-- get minimum positive (primitive) solution (x, y) to positive pell equation (x * x - D * y * y = 1) -> continued fraction expansion: get_pos_pell_solution(D)
+- get all prime factors for all numbers smaller than number -> get_prime_factors_till(N)
+
+- get minimum positive (primitive) solution (x, y) to positive pell equation -> continued fraction expansion: get_pos_pell_solution(D)
 
 - finding the minimum path within a graph from a source to any of a list of targets -> Djikstra's algorithm: get_djikstra_min_path(graph, source, targets)
 

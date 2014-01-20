@@ -95,7 +95,7 @@ def is_prime(n):
 
 # sieve of eratosthenes
 # https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
-def get_primes(n):
+def get_primes_till(n):
     is_prime = {i: True for i in range(2, n)}
 
     p = 2
@@ -167,6 +167,46 @@ def get_prime_factors(n):
 
     if 1 in factors: factors.pop(1)
     return factors
+
+def get_prime_factors_till(N):
+    primes = get_primes_till(N)
+    prime_factors_by_count = []
+
+    current_factors = {}
+    for p in primes:
+        current_factors[p] = {p: 1}
+    prime_factors_by_count.append(current_factors)
+
+    added = True
+
+    while added:
+        added = False
+        prev_factors = prime_factors_by_count[-1]
+
+        current_factors = {}
+        for n in prev_factors:
+            n_prime_factors = prev_factors[n]
+            
+            for p in primes:
+                new_n = p * n
+                if new_n > N: break
+
+                new_factors = {key: n_prime_factors[key] for key in n_prime_factors}
+                if p in new_factors:
+                    new_factors[p] += 1
+                else:
+                    new_factors[p] = 1
+                    
+                current_factors[new_n] = new_factors
+                added = True
+
+        prime_factors_by_count.append(current_factors)
+
+    prime_factors = {}
+    for prime_factors_i in prime_factors_by_count:
+        prime_factors.update(prime_factors_i)
+
+    return prime_factors
 
 # min (primitive) positive solution to positive pell equation x * x - D * y * y = 1
 # using continued fraction expansion http://mathworld.wolfram.com/PellEquation.html
