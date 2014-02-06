@@ -156,10 +156,10 @@ def get_prime_factors(n):
         else:
             factors[f] = 1
         
-        new_n = new_n / f
+        new_n = new_n // f
         f = get_prime_factor(new_n)
 
-    f = int(new_n)
+    f = new_n
     if f in factors:
         factors[f] += 1
     else:
