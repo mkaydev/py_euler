@@ -11,39 +11,39 @@ def get_digit_sum(n):
 def is_pos_int(n, error=0.000000001):    
     return n > 0 and abs(round(n) - n) <= error
 
-def is_tri_num(tn):
+def is_tri_num(tn, error=0.000000001):
     n1 = -1/2 + math.sqrt(1/4 + 2 * tn)
     n2 = -1/2 - math.sqrt(1/4 + 2 * tn)
     n = max(n1, n2)
-    return is_pos_int(n)
+    return is_pos_int(n, error)
 
-def is_squ_num(sn):
+def is_squ_num(sn, error=0.000000001):
     if sn < 1: return False
-    return is_pos_int(math.sqrt(sn))
+    return is_pos_int(math.sqrt(sn), error)
 
-def is_pent_num(pn):
+def is_pent_num(pn, error=0.000000001):
     n1 = 1/6 + math.sqrt(1/36 + 2/3 * pn)
     n2 = 1/6 - math.sqrt(1/36 + 2/3 * pn)
     n = max(n1, n2)
-    return is_pos_int(n)
+    return is_pos_int(n, error)
 
-def is_hex_num(hn):
+def is_hex_num(hn, error=0.000000001):
     n1 = 1/4 + math.sqrt(1/16 + 1/2 * hn)
     n2 = 1/4 - math.sqrt(1/16 + 1/2 * hn)
     n = max(n1, n2)
-    return is_pos_int(n)
+    return is_pos_int(n, error)
 
-def is_hept_num(hn):
+def is_hept_num(hn, error=0.000000001):
     n1 = 3/10 + math.sqrt(9/100 + 2/5 * hn)
     n2 = 3/10 - math.sqrt(9/100 + 2/5 * hn)
     n = max(n1, n2)
-    return is_pos_int(n)
+    return is_pos_int(n, error)
 
-def is_oct_num(on):
+def is_oct_num(on, error=0.000000001):
     n1 = 1/3 + math.sqrt(1/9 + 1/3 * on)
     n2 = 1/3 - math.sqrt(1/9 + 1/3 * on)
     n = max(n1, n2)
-    return is_pos_int(n)
+    return is_pos_int(n, error)
 
 def get_digit_count(n, base=10):
     assert n > 0 and base > 1
