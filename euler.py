@@ -116,6 +116,34 @@ def get_primes_till(n):
     primes.sort()
     return primes
 
+# sieve of eratosthenes
+# https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+def get_is_prime_list(n):
+    # list starts at 2, 0 and 1 are excluded
+    is_prime = [False, False] + [True] * (n - 2)
+    p = 2
+    while p * p < n:
+        for i in range(p * p, n, p):
+            is_prime[i] = False
+
+        found_next = False
+        for i in range(p + 1, n):
+            if is_prime[i]:
+                p = i
+                found_next = True
+                break
+
+        if not found_next: break
+    return is_prime 
+
+def cumulative_prime_sum(is_prime_list):
+    cur_sum = 0
+    result = []
+    for i, is_prime in enumerate(is_prime_list):
+        if is_prime: cur_sum += i
+        result.append(cur_sum)
+    return result
+
 # Fermat's factorization method - n must be odd
 # https://en.wikipedia.org/wiki/Fermat%27s_factorization_method
 def get_prime_factor(n):
