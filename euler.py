@@ -149,14 +149,25 @@ def cumulative_prime_sum(is_prime_list):
 def get_prime_factor(n):
     assert n % 2 == 1
     
-    a = int(math.ceil(math.sqrt(n)))
+    a = isqrt(n)
     b2 = a * a - n
+    b = isqrt(b2)
 
-    while int(math.sqrt(b2))**2 != b2:
+    while b * b != b2:
         a += 1
         b2 = a * a - n
+        b = isqrt(b2)
 
-    return int(a - math.sqrt(b2))
+    return int(a - b)
+
+# integer square root Newton's method
+def isqrt(n):
+    x = n
+    y = (x + 1) // 2
+    while y < x:
+        x = y
+        y = (x + n // x) // 2
+    return x
 
 def get_prime_factors(n):
     factors = {}
